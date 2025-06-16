@@ -1,26 +1,42 @@
-# Merging Odd and Even pages in a PDF
+# PDF Merge Tool
 
-![MergePDF](https://pablocruz.io/wp-content/uploads/2022/08/Merge.png)
+A simple Python utility for merging PDF files using [PyPDF](https://pypi.org/project/pypdf/). This tool provides two modes:
 
-If you want to merge two pdf’s by alternating their pages, you can use this python script to automate the process.
+## Features
 
-You can find a more in depth explanation of the script in [this](https://pablocruz.io/merge-pdf-alternating-pages/) blog post.
+### 🔁 Interleave Mode (`I`)
+Merges pages from `odd.pdf` and `even.pdf` in alternating sequence (reconstruct double-sided scans split into odd and even pages).
 
-## What the script does
+**Required input files:**
+- `odd.pdf`
+- `even.pdf`
 
-The script creates a merged pdf from two files named ‘odd.pdf’ and ‘even.pdf’, alternating the pages.
+**Result:**
+- `merged.pdf` with interleaved pages (odd-even-odd-even...)
+
+---
+
+### ➕ Append Mode (`M`)
+Appends all pages of `append.pdf` to the end of `original.pdf`.
+
+**Required input files:**
+- `original.pdf`
+- `append.pdf`
+
+**Result:**
+- `merged.pdf` containing `original.pdf` followed by `append.pdf`
+
+---
 
 ## Requirements
+-  Python 3.6+ (Coded and tested using Python 3.13 but expected to work with 3.6).
+-  pypdf 5.0.0+
 
-The script requires the PyPDF2 library, which can be found here, and installed using:
+---
 
-`pip install PyPDF2`
+## Usage
+1. Ensure the relevant PDF files are named as required (see above).
+2. Run the script:
 
-## How to use
-
-- Scan the odd pages and save the pdf file as ‘odd.pdf’.
-- Do the same with the even pages and save the file as ‘even.pdf’.
-- Make sure the number of pages in both files is the same.
-- Move both documents to the same directory as ‘merge.py’.
-- Run the python script
-- The script will combine both pdf’s, alternating the pages and save the file as ‘merged.pdf’.
+```bash
+python merge_pdf.py
