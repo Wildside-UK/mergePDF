@@ -1,6 +1,6 @@
 # PDF Merge Tool
 
-A simple Python utility for merging PDF files using [PyPDF2](https://pypi.org/project/PyPDF2/). This tool provides two modes:
+A simple Python utility for merging PDF files using [PyPDF](https://pypi.org/project/pypdf/). This tool provides two modes:
 
 ## Features
 
@@ -30,7 +30,7 @@ Appends all pages of `append.pdf` to the end of `original.pdf`.
 
 ## Requirements
 -  Python 3.6+ (Coded and tested using Python 3.13 but expected to work with 3.6).
--  PyPDF2
+-  pypdf 5.0.0+
 
 ---
 
